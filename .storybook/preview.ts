@@ -1,14 +1,24 @@
-import type { Preview } from "@storybook/react";
+import type { Preview } from '@storybook/react'
+import { themes } from '@storybook/theming'
 
 const preview: Preview = {
-  parameters: {
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
-    },
-  },
-};
+	parameters: {
+		docs: {
+			theme: themes.dark,
+		},
+		backgrounds: {
+			values: [
+				{ name: 'light', value: '#fff' },
+				{ name: 'dark', value: '#333' },
+			],
+		},
+		controls: {
+			matchers: {
+				color: /(background|color)$/i,
+				date: /Date$/i,
+			},
+		},
+	},
+}
 
-export default preview;
+export default preview
